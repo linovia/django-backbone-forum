@@ -121,7 +121,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
-    #
+    # Local
+    'django_backbone_todo.todo',
+
+    # 3rd parties apps
     'rest_framework',
 )
 
