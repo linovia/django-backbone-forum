@@ -1,0 +1,3 @@
+-e git+git@github.com:linovia/django-rest-framework.git@fa53dde576c8733292eacf27c80cf7a0ad222c3b#egg=djangorestframework-dev
+six==1.2.0
+https://www.djangoproject.com/download/1.5b1/tarball/
