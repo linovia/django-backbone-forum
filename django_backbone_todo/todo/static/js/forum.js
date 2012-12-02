@@ -19,31 +19,36 @@
 
 (function($) {
 
+    $.ajaxPrefilter( function( options ) {
+        console.log(options.url);
+        options.url = options.url + "?format=json";
+    });
+
     $.forum = {};
     
     // Models //////////////////////////////////////////////////////////////
         
     $.forum.Message = Backbone.RelationalModel.extend({
-        urlRoot: '/api/messages/?format=json',
-        idAttribute: 'id'
+        urlRoot: '/api/messages/',
+        idAttribute: '_id'
     });
 
     $.forum.Thread = Backbone.RelationalModel.extend({
-        urlRoot: '/api/threads/?format=json',
-        idAttribute: 'id',
+        urlRoot: '/api/threads/',
+        idAttribute: '_id',
         relations: [{
             type: Backbone.HasMany,
             key: 'messages',
             relatedModel: '$.forum.Message',
             reverseRelation: {
                 key: 'thread',
-                includeInJSON: 'id'
+                includeInJSON: '_id'
             }
         }]
     });
     
     $.forum.ThreadCollection = Backbone.Collection.extend({
-        url: '/api/threads/?format=json',
+        url: '/api/threads/',
         model: $.forum.Thread
     });
     
