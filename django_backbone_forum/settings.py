@@ -1,4 +1,4 @@
-# Django settings for django_backbone_todo project.
+# Django settings for django_backbone_forum project.
 
 from os.path import dirname, join, normpath
 PROJECT_ROOT = normpath(join('..', dirname(__file__)))
@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'todo.db',
+        'NAME': 'forum.db',
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -101,10 +101,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'django_backbone_todo.urls'
+ROOT_URLCONF = 'django_backbone_forum.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'django_backbone_todo.wsgi.application'
+WSGI_APPLICATION = 'django_backbone_forum.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -122,7 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     # Local
-    'django_backbone_todo.todo',
+    'django_backbone_forum.forum',
 
     # 3rd parties apps
     'rest_framework',
